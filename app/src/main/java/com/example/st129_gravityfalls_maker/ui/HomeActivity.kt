@@ -8,10 +8,14 @@ import com.example.st129_gravityfalls_maker.R
 import com.example.st129_gravityfalls_maker.base.BaseActivity
 import com.example.st129_gravityfalls_maker.databinding.ActivityHomeBinding
 import com.example.st129_gravityfalls_maker.dialog.RateDialog
+import com.example.st129_gravityfalls_maker.extionsion.getImageInternal
 import com.example.st129_gravityfalls_maker.extionsion.setOnSingleClick
 import com.example.st129_gravityfalls_maker.extionsion.show
 import com.example.st129_gravityfalls_maker.extionsion.startIntentAnim
+import com.example.st129_gravityfalls_maker.utils.DataLocal
+import com.example.st129_gravityfalls_maker.utils.KeyApp.DOWNLOAD_ALBUM_BACKGROUND
 import com.example.st129_gravityfalls_maker.utils.SystemUtils
+import java.io.File
 import kotlin.system.exitProcess
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
@@ -21,12 +25,15 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     override fun initView() {
         countAccess()
+        DataLocal.All_DATA.clear()
+        DataLocal.All_DATA.addAll(DataLocal.getLayerAsset(this))
+        deleteTempData()
     }
 
     override fun viewListener() {
         binding.apply {
             actionBar.btnActionBarRight.setOnSingleClick { startIntentAnim(SettingsActivity::class.java) }
-//            btnCreate.setOnSingleClick { startIntentAnim(ChooseAvatarActivity::class.java) }
+            btnCreate.setOnSingleClick { startIntentAnim(ChooseAvatarActivity::class.java) }
             btnMyAlbum.setOnSingleClick { startIntentAnim(MyAlbumActivity::class.java) }
         }
     }
@@ -80,5 +87,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         }
     }
 
+    private fun deleteTempData() {
+        val dataTemp = getImageInternal(this, DOWNLOAD_ALBUM_BACKGROUND)
+        if (dataTemp.isNotEmpty()) {
+            dataTemp.forEach {
+                val file = File(it)
+                file.delete()
+            }
+        }
+    }
 
 }

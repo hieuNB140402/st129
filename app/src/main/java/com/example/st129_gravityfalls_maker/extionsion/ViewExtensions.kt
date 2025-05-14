@@ -10,7 +10,6 @@ import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.net.Uri
 import android.os.Build
-import android.provider.Settings
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
@@ -22,13 +21,12 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.WindowCompat
+import com.example.st129_gravityfalls_maker.R
 import com.example.st129_gravityfalls_maker.dialog.LoadingDialog
+import com.example.st129_gravityfalls_maker.ui.HomeActivity
 import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyIntent.INTENT_KEY
-import com.example.st129_gravityfalls_maker.utils.SystemUtils
 import com.example.st129_gravityfalls_maker.utils.SystemUtils.lastClickTime
 import com.example.st129_gravityfalls_maker.utils.SystemUtils.setLocale
-import com.example.st129_gravityfalls_maker.R
-import com.example.st129_gravityfalls_maker.ui.HomeActivity
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -90,7 +88,12 @@ internal fun Activity.startIntentAnim(targetActivity: Class<*>, value: String) {
     startActivity(intent)
     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 }
-
+internal fun Activity.startIntentAnim(targetActivity: Class<*>, value: Int) {
+    val intent = Intent(this, targetActivity)
+    intent.putExtra(INTENT_KEY, value)
+    startActivity(intent)
+    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+}
 internal fun Activity.startIntentAnim(targetActivity: Class<*>, key: String, value: String) {
     val intent = Intent(this, targetActivity)
     intent.putExtra(key, value)

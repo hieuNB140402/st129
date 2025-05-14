@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1D9B2"
+    tools:context=".ui.CustomizeActivity">
+
+    <!-- layoutActionBar -->
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <!-- Layout Image Layer -->
+    <FrameLayout
+        android:id="@+id/layoutCustomLayer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutRcvColor"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
+
+    <!-- btnFlip-->
+    <ImageView
+        android:id="@+id/btnFlip"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_flip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutActionBar" />
+
+    <!-- btnHide -->
+    <ImageView
+        android:id="@+id/btnHide"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_show"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFlip" />
+
+    <!-- btnRandom -->
+    <ImageView
+        android:id="@+id/btnRandom"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHide" />
+
+    <FrameLayout
+        android:id="@+id/layoutRcvColor"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl0625">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvColor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="18dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_color" />
+    </FrameLayout>
+    <!-- gl0625 -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl0625"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.625" />
+
+    <!-- RCV -->
+    <FrameLayout
+        android:id="@+id/layoutRcv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#DEA57A"
+        app:layout_constraintBottom_toTopOf="@+id/layoutNav"
+        app:layout_constraintTop_toBottomOf="@+id/gl0625">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="6dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="5"
+            tools:listitem="@layout/item_customize" />
+    </FrameLayout>
+
+    <!-- Navigation -->
+    <FrameLayout
+        android:id="@+id/layoutNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#8B5933"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="6dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/navBody"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_body" />
+
+                <ImageView
+                    android:id="@+id/navHead"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_head" />
+
+                <ImageView
+                    android:id="@+id/navEye"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_eye" />
+
+                <ImageView
+                    android:id="@+id/navIris"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_iris" />
+
+                <ImageView
+                    android:id="@+id/navEyebrow"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_eyebrow" />
+
+                <ImageView
+                    android:id="@+id/navNose"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_nose" />
+
+                <ImageView
+                    android:id="@+id/navEar"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_ear" />
+
+                <ImageView
+                    android:id="@+id/navMouth"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_mouth" />
+
+                <ImageView
+                    android:id="@+id/navBeard"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_beard" />
+
+                <ImageView
+                    android:id="@+id/navFacepaint"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_facepaint" />
+
+                <ImageView
+                    android:id="@+id/navSidehair"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_sidehair" />
+
+                <ImageView
+                    android:id="@+id/navFronthair"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_fronthair" />
+
+                <ImageView
+                    android:id="@+id/navBackhair"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_backhair" />
+
+                <ImageView
+                    android:id="@+id/navShirt"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_shirt" />
+
+                <ImageView
+                    android:id="@+id/navJacket"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_jacket" />
+
+                <ImageView
+                    android:id="@+id/navGlass"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_glass" />
+
+                <ImageView
+                    android:id="@+id/navHand"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_hand" />
+
+                <ImageView
+                    android:id="@+id/navNecklace"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_necklace" />
+
+                <ImageView
+                    android:id="@+id/navEarring"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_earring" />
+
+                <ImageView
+                    android:id="@+id/navSleeve"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_sleeve" />
+
+                <ImageView
+                    android:id="@+id/navAccessories"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_accessories" />
+
+                <ImageView
+                    android:id="@+id/navHat"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_hat" />
+
+                <ImageView
+                    android:id="@+id/navOther"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_other" />
+
+                <ImageView
+                    android:id="@+id/navWing"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/nav_wing" />
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

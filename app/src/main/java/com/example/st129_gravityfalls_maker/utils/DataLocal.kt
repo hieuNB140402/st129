@@ -3,20 +3,19 @@ package com.example.st129_gravityfalls_maker.utils
 import android.content.Context
 import android.content.res.AssetManager
 import android.util.Log
+import com.example.st129_gravityfalls_maker.R
 import com.example.st129_gravityfalls_maker.model.ColorModel
 import com.example.st129_gravityfalls_maker.model.CustomizeModel
 import com.example.st129_gravityfalls_maker.model.IntroModel
 import com.example.st129_gravityfalls_maker.model.LanguageModel
 import com.example.st129_gravityfalls_maker.model.LayerModel
-
 import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.ASSET_MANAGER
 import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.AVATAR_ASSET
+import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.DATA
+import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.DATA_ASSET
 import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.FIRST_JPG
 import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.FIRST_PNG
 import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.FIRST_WEBP
-import com.example.st129_gravityfalls_maker.R
-import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.DATA
-import com.example.st129_gravityfalls_maker.utils.KeyApp.KeyAssets.DATA_ASSET
 
 object DataLocal {
     fun getLanguageList(): ArrayList<LanguageModel> {
@@ -36,11 +35,57 @@ object DataLocal {
     )
 
     var listImageNotFocus: ArrayList<Int> = arrayListOf(
-        
+        R.drawable.nav_body,
+        R.drawable.nav_head,
+        R.drawable.nav_eye,
+        R.drawable.nav_iris,
+        R.drawable.nav_eyebrow,
+        R.drawable.nav_nose,
+        R.drawable.nav_ear,
+        R.drawable.nav_mouth,
+        R.drawable.nav_beard,
+        R.drawable.nav_facepaint,
+        R.drawable.nav_sidehair,
+        R.drawable.nav_fronthair,
+        R.drawable.nav_backhair,
+        R.drawable.nav_shirt,
+        R.drawable.nav_jacket,
+        R.drawable.nav_glass,
+        R.drawable.nav_hand,
+        R.drawable.nav_necklace,
+        R.drawable.nav_earring,
+        R.drawable.nav_sleeve,
+        R.drawable.nav_accessories,
+        R.drawable.nav_hat,
+        R.drawable.nav_other,
+        R.drawable.nav_wing,
     )
 
     var listImageFocus: ArrayList<Int> = arrayListOf(
-        
+        R.drawable.nav_sel_body,
+        R.drawable.nav_sel_head,
+        R.drawable.nav_sel_eye,
+        R.drawable.nav_sel_iris,
+        R.drawable.nav_sel_eyebrow,
+        R.drawable.nav_sel_nose,
+        R.drawable.nav_sel_ear,
+        R.drawable.nav_sel_mouth,
+        R.drawable.nav_sel_beard,
+        R.drawable.nav_sel_facepaint,
+        R.drawable.nav_sel_sidehair,
+        R.drawable.nav_sel_fronthair,
+        R.drawable.nav_sel_backhair,
+        R.drawable.nav_sel_shirt,
+        R.drawable.nav_sel_jacket,
+        R.drawable.nav_sel_glass,
+        R.drawable.nav_sel_hand,
+        R.drawable.nav_sel_necklace,
+        R.drawable.nav_sel_earring,
+        R.drawable.nav_sel_sleeve,
+        R.drawable.nav_sel_accessories,
+        R.drawable.nav_sel_hat,
+        R.drawable.nav_sel_other,
+        R.drawable.nav_sel_wing,
     )
 
     var All_DATA: ArrayList<CustomizeModel> = arrayListOf()
@@ -57,13 +102,13 @@ object DataLocal {
         return sortedFiles
     }
 
-    fun getAvatarAsset(context: Context): ArrayList<String> {
+    fun getPathAsset(context: Context, path: String): ArrayList<String> {
         val assetManager = context.assets
-        val allAvatar = assetManager.list(AVATAR_ASSET)
+        val allAvatar = assetManager.list(path)
         val sortedAvatar = sortAsset(allAvatar)
         val returnAvatar = ArrayList<String>()
         sortedAvatar!!.forEach {
-            returnAvatar.add("$ASSET_MANAGER/$AVATAR_ASSET/$it")
+            returnAvatar.add("$ASSET_MANAGER/$path/$it")
         }
 
         return returnAvatar
@@ -73,7 +118,7 @@ object DataLocal {
         val list: ArrayList<CustomizeModel> = arrayListOf()
         val assetManager = context.assets
         val allCharacter = assetManager.list(DATA)
-        val allAvatar = getAvatarAsset(context)
+        val allAvatar = getPathAsset(context, AVATAR_ASSET)
         val sortedCharacter = sortAsset(allCharacter)
         sortedCharacter?.let {
             // SWORD1
@@ -87,7 +132,29 @@ object DataLocal {
                     folderLayer.forEachIndexed { indexLayer, layer ->
                         when (layer) {
                             KeyApp.NameFolderLayer.BODY -> { nuggtsCharacter.body = getFileLayer(character, layer, assetManager) }
-                            
+                            KeyApp.NameFolderLayer.HEAD -> { nuggtsCharacter.head = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.EYE -> { nuggtsCharacter.eye = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.IRIS -> { nuggtsCharacter.iris = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.EYEBROW -> { nuggtsCharacter.eyebrow = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.NOSE -> { nuggtsCharacter.nose = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.EAR -> { nuggtsCharacter.ear = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.MOUTH -> { nuggtsCharacter.mouth = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.BEARD -> { nuggtsCharacter.beard = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.FACEPAINT -> { nuggtsCharacter.facepaint = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.SIDEHAIR -> { nuggtsCharacter.sidehair = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.FRONTHAIR -> { nuggtsCharacter.fronthair = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.BACKHAIR -> { nuggtsCharacter.backhair = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.SHIRT -> { nuggtsCharacter.shirt = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.JACKET -> { nuggtsCharacter.jacket = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.GLASS -> { nuggtsCharacter.glass = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.HAND -> { nuggtsCharacter.hand = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.NECKLACE -> { nuggtsCharacter.necklace = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.EARRING -> { nuggtsCharacter.earring = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.SLEEVE -> { nuggtsCharacter.sleeve = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.ACCESSORIES -> { nuggtsCharacter.accessories = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.HAT -> { nuggtsCharacter.hat = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.OTHER -> { nuggtsCharacter.other = getFileLayer(character, layer, assetManager) }
+                            KeyApp.NameFolderLayer.WING -> { nuggtsCharacter.wing = getFileLayer(character, layer, assetManager) }
                         }
                     }
                 }
@@ -142,3 +209,4 @@ object DataLocal {
     }
     
 }
+

@@ -21,7 +21,7 @@
             android:scaleType="centerCrop"
             android:background="@color/white"
             android:src="@drawable/img_intro_1"
-            app:shapeAppearanceOverlay="@style/border_image" />
+            app:shapeAppearanceOverlay="@style/border_image_21" />
 
         <ImageView
             android:id="@+id/btnMore"
