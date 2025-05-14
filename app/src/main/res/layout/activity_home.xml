@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background_app"
+    tools:context=".ui.HomeActivity">
+    <!-- layoutActionBar -->
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+    <!-- imvTop -->
+    <ImageView
+        android:id="@+id/imvTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="67dp"
+        android:layout_marginTop="-42dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_home_name"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imvTop">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="vertical">
+
+            <!-- btnCreate -->
+            <FrameLayout
+                android:id="@+id/btnCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_home_1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <com.example.st129_gravityfalls_maker.custom.text.StrokeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="18dp"
+                        android:layout_weight="6"
+                        android:fontFamily="@font/riffic_free_bold"
+                        android:gravity="center"
+                        android:text="@string/gravityfalls_maker"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        app:strokeColor="@color/green_25"
+                        app:strokeJoinStyle="round"
+                        app:strokeMiter="5dp"
+                        app:strokeWidth="1dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- btnMyAlbum -->
+            <FrameLayout
+                android:id="@+id/btnMyAlbum"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_home_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <com.example.st129_gravityfalls_maker.custom.text.StrokeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="18dp"
+                        android:layout_weight="6"
+                        android:fontFamily="@font/riffic_free_bold"
+                        android:gravity="center"
+                        android:text="@string/my_album"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        app:strokeColor="@color/green_25"
+                        app:strokeJoinStyle="round"
+                        app:strokeMiter="5dp"
+                        app:strokeWidth="1dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
