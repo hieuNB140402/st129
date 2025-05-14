@@ -1,7 +1,7 @@
 package com.example.st129_gravityfalls_maker.utils
 
 object KeyApp {
-    const val DOWNLOAD_ALBUM = "Mechanoid Maker"
+    const val DOWNLOAD_ALBUM = "GravityFalls Maker"
     const val AVATAR = "avatar"
 
     object KeyIntent {
@@ -115,7 +115,7 @@ object KeyApp {
         const val GLASS = "glass"
         const val OTHER = "other"
         const val EFFECT = "effect"
-        const val BG = "bg"
+        const val BG = "background"
         const val WING = "wing"
     }
 

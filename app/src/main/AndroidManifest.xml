@@ -22,6 +22,12 @@
         android:theme="@style/Theme.ST129_GravityFalls_Maker"
         tools:targetApi="31">
         <activity
+            android:name=".ui.ViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MyAlbumActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -30,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.PermissionActivity"
             android:exported="false" />
@@ -46,11 +51,13 @@
         <activity
             android:name=".ui.HomeActivity"
             android:exported="true">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".MainActivity"

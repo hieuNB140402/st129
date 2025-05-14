@@ -1,31 +1,17 @@
 package com.example.st129_gravityfalls_maker.ui
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.st129_gravityfalls_maker.R
 import com.example.st129_gravityfalls_maker.base.BaseActivity
 import com.example.st129_gravityfalls_maker.databinding.ActivityHomeBinding
-import com.example.st129_gravityfalls_maker.dialog.LoadingDialog
 import com.example.st129_gravityfalls_maker.dialog.RateDialog
-import com.example.st129_gravityfalls_maker.extionsion.select
 import com.example.st129_gravityfalls_maker.extionsion.setOnSingleClick
 import com.example.st129_gravityfalls_maker.extionsion.show
 import com.example.st129_gravityfalls_maker.extionsion.startIntentAnim
 import com.example.st129_gravityfalls_maker.utils.SystemUtils
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import kotlin.system.exitProcess
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
@@ -41,7 +27,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         binding.apply {
             actionBar.btnActionBarRight.setOnSingleClick { startIntentAnim(SettingsActivity::class.java) }
 //            btnCreate.setOnSingleClick { startIntentAnim(ChooseAvatarActivity::class.java) }
-//            btnMyAlbum.setOnSingleClick { showInterAll { startIntentAnim(MyAlbumActivity::class.java) } }
+            btnMyAlbum.setOnSingleClick { startIntentAnim(MyAlbumActivity::class.java) }
         }
     }
 
@@ -71,7 +57,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             dialogRate.apply {
                 onRateLess3 = {
                     SystemUtils.setIsRate(this@HomeActivity, true)
-                    Toast.makeText(this@HomeActivity, R.string.have_rated, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@HomeActivity, R.string.have_rated, Toast.LENGTH_SHORT)
+                        .show()
                     val handler = Handler()
                     handler.postDelayed({
                         dialogRate.dismiss()
@@ -92,7 +79,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             exitProcess(0)
         }
     }
-
 
 
 }

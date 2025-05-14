@@ -19,9 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
+            android:background="@color/white"
             android:src="@drawable/img_intro_1"
-            app:shapeAppearanceOverlay="@style/border_image"
-            app:strokeColor="@color/white" />
+            app:shapeAppearanceOverlay="@style/border_image" />
 
         <ImageView
             android:id="@+id/btnMore"
