@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Cartoon Cryptid Creator</string>
+    <string name="go_to_setting_title">Permission settings</string>
+    <string name="go_to_setting_message">The app needs this permission</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="settings">Settings</string>
+    <string name="this_action_can_contain_ads">This action can contain ads</string>
+    <string name="english">English</string>
+    <string name="not_select_lang">Please select a language</string>
+    <string name="next">Next</string>
+    <string name="language">Language</string>
+
+    <string name="title_1">Create GravityFalls</string>
+    <string name="title_2">GravityFalls Diversity</string>
+    <string name="title_3">Variety Background</string>
+
+    <string name="content_1">Beyond your imagination </string>
+    <string name="content_2">Choose topic you like</string>
+    <string name="content_3">Make a difference</string>
+
+    <string name="permission">Permission</string>
+    <string name="storage">Storage</string>
+    <string name="continue_per">Continue</string>
+    <string name="notification">Notification</string>
+    <string name="granted_notification">Notification permission granted</string>
+    <string name="denied_notification">Notification permission denied</string>
+    <string name="granted_storage">Storage permission granted</string>
+    <string name="denied_storage">Storage permission denied</string>
+    <string name="reject_access">Please grant storage permission to use the application</string>
+    <string name="allow">Allow</string>
+    <string name="to_access">to access photos on your device</string>
+    <string name="to_access_13">to access notification on your device</string>
+
+    <string name="rate_us">Rate Us</string>
+    <string name="share_app">Share App</string>
+    <string name="privacy_policy"><![CDATA[Privacy & Policy]]></string>
+
+    <string name="rate_us_ed">You\'ve already voted!</string>
+    <string name="one_start_title">Oh, no!</string>
+    <string name="four_start_title">We love you too!</string>
+    <string name="zero_star_title">Do you like the app?</string>
+    <string name="one_start">Please give us some feedback</string>
+    <string name="four_start">Thanks for your feedback</string>
+    <string name="zero_star">Let us know your experience</string>
+    <string name="rate_us_0">You have not rated it yet!</string>
+    <string name="rate">Rate</string>
+    <string name="exit">Exit</string>
+
+    <string name="not_yet_rate">Please select number of stars</string>
+    <string name="have_rated">Thank you for rate our app</string>
+    <string name="share">Share</string>
+    <string name="share_all">Share all</string>
+    <string name="delete">Delete</string>
+    <string name="download">Download</string>
+    <string name="view">View</string>
+    <string name="select_all">Select all</string>
+    <string name="no_item_is_here">No item is here</string>
+    <string name="do_you_want_to_delete">Do you want to delete?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="wait_a_minute">Wait a minute…</string>
+    <string name="done">Done</string>
+    <string name="reset">Reset</string>
+    <string name="do_you_want_to_reset">Do you want to reset?</string>
+    <string name="do_you_want_to_exit">Haven’t saved it yet, are you sure to exit?</string>
+    <string name="download_success">Download successful to the GravityFalls Maker album</string>
+    <string name="loading">Loading</string>
+    <string name="no_internet">No internet</string>
+    <string name="please_check_your_internet">Please check your internet</string>
+    <string name="please_select_an_image">Please select an image</string>
+    <string name="error">Error</string>
+    <string name="an_error_occurred">An error occurred, would you like to try again?</string>
+    <string name="gravityfalls">GravityFalls</string>
+    <string name="gravityfalls_maker">GravityFalls maker</string>
+    <string name="my_album">My Album</string>
+</resources>

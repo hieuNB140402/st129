@@ -51,7 +51,7 @@ class BackgroundActivity : BaseActivity<ActivityBackgroundBinding>() {
         initTransformer()
         initData()
         initVpg()
-        binding.imvImage.setImageResource(R.drawable.img_intro_3)
+        handleSetBackground(1)
     }
 
     override fun viewListener() {
@@ -62,8 +62,7 @@ class BackgroundActivity : BaseActivity<ActivityBackgroundBinding>() {
                 btnActionBarRight.setOnSingleClick { handleSave() }
             }
             btnNone.setOnSingleClick { handleNone() }
-            binding.vpgBackground.registerOnPageChangeCallback(object :
-                ViewPager2.OnPageChangeCallback() {
+            binding.vpgBackground.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     handleSetBackground(position)
@@ -126,24 +125,27 @@ class BackgroundActivity : BaseActivity<ActivityBackgroundBinding>() {
         binding.vpgBackground.adapter = backgroundAdapter
         backgroundAdapter.submitList(backgroundList)
         binding.vpgBackground.offscreenPageLimit = 3
-        binding.vpgBackground.currentItem = 0
+        binding.vpgBackground.currentItem = 1
+
+        binding.vpgBackground.setPageTransformer(transformerImage)
     }
 
     private fun handleNone() {
         binding.apply {
-            isNone = false
+            isNone = true
             imvBackground.setImageBitmap(null)
+            binding.btnNone.setImageResource(R.drawable.ic_focus_none)
             binding.vpgBackground.setPageTransformer(transformerNone)
         }
     }
 
     private fun handleSetBackground(position: Int) {
-        if (!isNone) {
-            isNone = true
+        if (isNone) {
+            isNone = false
             binding.vpgBackground.setPageTransformer(transformerImage)
         }
-        Glide.with(this@BackgroundActivity).load(backgroundList[position])
-            .into(binding.imvBackground)
+        binding.btnNone.setImageResource(R.drawable.ic_none_background)
+        Glide.with(this@BackgroundActivity).load(backgroundList[position]).into(binding.imvBackground)
         if (isFlip) {
             binding.imvBackground.flipImage()
         }
@@ -160,6 +162,7 @@ class BackgroundActivity : BaseActivity<ActivityBackgroundBinding>() {
             eLog("delete success: $pathImage")
         }
     }
+
     private fun handleSave() {
         binding.apply {
             setLocale(this@BackgroundActivity)

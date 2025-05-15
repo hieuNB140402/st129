@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Cartoon Cryptid Creator</string>
+    <string name="go_to_setting_title">Paramètres d\'autorisation</string>
+    <string name="go_to_setting_message">L\'application a besoin de cette autorisation</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="settings">Paramètres</string>
+    <string name="this_action_can_contain_ads">Cette action peut contenir des publicités</string>
+    <string name="english">Anglais</string>
+    <string name="not_select_lang">Veuillez sélectionner une langue</string>
+    <string name="next">Suivant</string>
+    <string name="language">Langue</string>
+
+    <string name="title_1">Créer GravityFalls</string>
+    <string name="title_2">Diversité de GravityFalls</string>
+    <string name="title_3">Arrière-plans variés</string>
+
+    <string name="content_1">Au-delà de votre imagination</string>
+    <string name="content_2">Choisissez un sujet que vous aimez</string>
+    <string name="content_3">Faites la différence</string>
+
+    <string name="permission">Autorisation</string>
+    <string name="storage">Stockage</string>
+    <string name="continue_per">Continuer</string>
+    <string name="notification">Notification</string>
+    <string name="granted_notification">Autorisation de notification accordée</string>
+    <string name="denied_notification">Autorisation de notification refusée</string>
+    <string name="granted_storage">Autorisation de stockage accordée</string>
+    <string name="denied_storage">Autorisation de stockage refusée</string>
+    <string name="reject_access">Veuillez accorder l\'autorisation de stockage pour utiliser l\'application</string>
+    <string name="allow">Autoriser</string>
+    <string name="to_access">pour accéder aux photos de votre appareil</string>
+    <string name="to_access_13">pour accéder aux notifications de votre appareil</string>
+
+    <string name="rate_us">Évaluez-nous</string>
+    <string name="share_app">Partager l\'application</string>
+    <string name="privacy_policy"><![CDATA[Confidentialité et Politique]]></string>
+
+    <string name="rate_us_ed">Vous avez déjà voté !</string>
+    <string name="one_start_title">Oh non !</string>
+    <string name="four_start_title">Nous vous aimons aussi !</string>
+    <string name="zero_star_title">Aimez-vous l\'application ?</string>
+    <string name="one_start">Veuillez nous donner votre avis</string>
+    <string name="four_start">Merci pour vos commentaires</string>
+    <string name="zero_star">Faites-nous part de votre expérience</string>
+    <string name="rate_us_0">Vous ne l\'avez pas encore notée !</string>
+    <string name="rate">Noter</string>
+    <string name="exit">Quitter</string>
+
+    <string name="not_yet_rate">Veuillez sélectionner le nombre d’étoiles</string>
+    <string name="have_rated">Merci d\'avoir noté notre application</string>
+    <string name="share">Partager</string>
+    <string name="share_all">Tout partager</string>
+    <string name="delete">Supprimer</string>
+    <string name="download">Télécharger</string>
+    <string name="view">Voir</string>
+    <string name="select_all">Tout sélectionner</string>
+    <string name="no_item_is_here">Aucun élément ici</string>
+    <string name="do_you_want_to_delete">Voulez-vous supprimer ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="wait_a_minute">Veuillez patienter…</string>
+    <string name="done">Terminé</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="do_you_want_to_reset">Voulez-vous réinitialiser ?</string>
+    <string name="do_you_want_to_exit">Vous n\'avez pas encore enregistré, voulez-vous vraiment quitter ?</string>
+    <string name="download_success">Téléchargement réussi dans l\'album GravityFalls Maker</string>
+    <string name="loading">Chargement</string>
+    <string name="no_internet">Pas d\'internet</string>
+    <string name="please_check_your_internet">Veuillez vérifier votre connexion internet</string>
+    <string name="please_select_an_image">Veuillez sélectionner une image</string>
+    <string name="error">Erreur</string>
+    <string name="an_error_occurred">Une erreur s’est produite, voulez-vous réessayer ?</string>
+    <string name="gravityfalls">GravityFalls</string>
+    <string name="gravityfalls_maker">Créateur de GravityFalls</string>
+    <string name="my_album">Mon album</string>
+</resources>
